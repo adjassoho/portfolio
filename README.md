@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Portfolio - ADJASSOHO Silvère
 
-## Getting Started
+Portfolio professionnel de développeur FullStack & IA, construit avec Next.js 16 et des technologies modernes.
 
-First, run the development server:
+## ✨ Fonctionnalités
+
+- 🎨 Design moderne et élégant avec palette Bleu Électrique & Or
+- 🌌 Arrière-plan Galaxy animé avec WebGL
+- 💳 ProfileCard 3D interactive avec effets tilt
+- 📱 4 applications mobiles innovantes (dont Sagbo - IA en Fongbé)
+- 🌐 7 sites web professionnels
+- 🏆 7+ certifications professionnelles
+- 💬 Section témoignages clients
+- 📞 Bouton WhatsApp flottant
+- ⚡ Optimisations de performance
+- 📱 100% Responsive
+
+## 🛠️ Technologies
+
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **3D Effects**: OGL (WebGL)
+- **Icons**: Lucide React
+- **Language**: TypeScript / JavaScript
+- **Deployment**: Vercel
+
+## 📦 Installation
 
 ```bash
+# Cloner le repository
+git clone https://github.com/adjassoho/portfolio.git
+
+# Installer les dépendances
+npm install
+
+# Lancer en développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build pour production
+npm run build
+
+# Lancer en production
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Déploiement sur Vercel
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Connectez-vous sur [Vercel](https://vercel.com)
+2. Importez votre repository GitHub
+3. Vercel détectera automatiquement Next.js
+4. Cliquez sur "Deploy"
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📞 Contact
 
-## Learn More
+- **Email**: silveradjassoho@gmail.com
+- **WhatsApp**: +229 55 61 69 60
+- **Téléphone**: +229 01 65 90 00 07
+- **Localisation**: Calavi, Bénin
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 Licence
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2024 ADJASSOHO Silvère. Tous droits réservés.
