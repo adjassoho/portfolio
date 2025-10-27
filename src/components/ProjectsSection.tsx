@@ -195,11 +195,12 @@ export default function ProjectsSection() {
           </p>
         </motion.div>
 
-        {/* Featured Projects - Horizontal scroll */}
+        {/* Featured Projects - Carousel on mobile, horizontal scroll on desktop */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold mb-10 text-center">Projets mis en avant</h3>
 
-          <div className="overflow-x-auto pb-8 hide-scrollbar">
+          {/* Desktop: Horizontal scroll */}
+          <div className="hidden md:block overflow-x-auto pb-8 hide-scrollbar">
             <div className="flex gap-8 min-w-max">
               {webProjects.filter(p => p.featured).map((project, index) => (
                 <motion.div
@@ -271,6 +272,102 @@ export default function ProjectsSection() {
                     )}
                   </div>
                 </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile: Carousel with dots */}
+          <div className="md:hidden relative">
+            <div className="overflow-x-auto snap-x snap-mandatory hide-scrollbar" id="featured-carousel">
+              <div className="flex gap-4 px-4">
+                {webProjects.filter(p => p.featured).map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                    className="w-[85vw] flex-shrink-0 snap-center bg-card/80 backdrop-blur-sm rounded-3xl overflow-hidden shadow-xl border border-border"
+                  >
+                    <div className="h-48 bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center relative overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                        sizes="85vw"
+                      />
+                      {project.badge && (
+                        <div className="absolute top-4 left-4 z-10">
+                          <span className="text-xs bg-secondary text-white px-3 py-1 rounded-full font-semibold shadow-lg">
+                            {project.badge}
+                          </span>
+                        </div>
+                      )}
+                      <div className="absolute top-4 right-4 flex gap-2 z-10">
+                        <a href={project.links.live} target="_blank" rel="noopener noreferrer"
+                          className="p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-secondary hover:text-white transition-colors shadow-md">
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                        {project.links.github !== "#" && (
+                          <a href={project.links.github} target="_blank" rel="noopener noreferrer"
+                            className="p-2 rounded-full bg-card/80 backdrop-blur-sm hover:bg-secondary hover:text-white transition-colors shadow-md">
+                            <Github className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-3">
+                        <h4 className="text-lg font-bold">{project.title}</h4>
+                      </div>
+
+                      <p className="text-foreground/80 mb-4 text-sm line-clamp-3">{project.description}</p>
+
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="px-3 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {project.isCollaborative && (
+                        <div className="flex items-center text-xs text-foreground/60">
+                          <Star className="w-3 h-3 text-yellow-500 mr-1" />
+                          <span>Projet collaboratif</span>
+                        </div>
+                      )}
+                      {!project.isCollaborative && (
+                        <div className="flex items-center text-xs text-primary/80">
+                          <span className="font-medium">Projet individuel</span>
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Carousel dots indicator */}
+            <div className="flex justify-center gap-2 mt-6">
+              {webProjects.filter(p => p.featured).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    const carousel = document.getElementById('featured-carousel');
+                    if (carousel) {
+                      const cardWidth = carousel.scrollWidth / webProjects.filter(p => p.featured).length;
+                      carousel.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+                    }
+                  }}
+                  className="w-2 h-2 rounded-full bg-primary/30 hover:bg-primary transition-colors"
+                  aria-label={`Aller au projet ${index + 1}`}
+                />
               ))}
             </div>
           </div>

@@ -207,6 +207,20 @@ formance optimizations */
   display: none;
 }
 
+/* Smooth scroll snap for carousel */
+.snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+}
+
+.snap-mandatory {
+  scroll-snap-stop: always;
+}
+
 /* GPU acceleration for smooth animations */
 .gpu-accelerated {
   transform: translateZ(0);
