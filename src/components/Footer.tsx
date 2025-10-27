@@ -4,13 +4,20 @@ import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-border pt-20 pb-10">
-      <div className="container mx-auto px-4">
+    <footer className="bg-background border-t border-border pt-20 pb-10 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-secondary/5"></div>
+        <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-secondary/3 to-transparent"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* About */}
           <div className="col-span-1 lg:col-span-2">
             <div className="text-3xl font-bold mb-6">
               <span className="text-primary">ADJASSOHO</span>
+              <span className="text-secondary"> Silvère</span>
             </div>
             <p className="text-foreground/70 mb-6 max-w-lg leading-relaxed">
               Développeur fullstack passionné par l'innovation technologique et l'intégration de l'intelligence artificielle 
@@ -36,6 +43,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li><a href="#home" className="text-foreground/70 hover:text-primary transition-colors">Accueil</a></li>
               <li><a href="#about" className="text-foreground/70 hover:text-primary transition-colors">À propos</a></li>
+              <li><a href="#certifications" className="text-foreground/70 hover:text-primary transition-colors">Certifications</a></li>
               <li><a href="#projects" className="text-foreground/70 hover:text-primary transition-colors">Projets</a></li>
               <li><a href="#contact" className="text-foreground/70 hover:text-primary transition-colors">Contact</a></li>
             </ul>

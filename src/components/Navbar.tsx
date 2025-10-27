@@ -10,6 +10,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Accueil", href: "#home" },
     { name: "À propos", href: "#about" },
+    { name: "Certifications", href: "#certifications" },
     { name: "Projets", href: "#projects" },
     { name: "Contact", href: "#contact" }
   ];
@@ -28,7 +29,7 @@ export default function Navbar() {
             className="text-2xl font-bold"
             whileHover={{ scale: 1.05 }}
           >
-            <span className="text-primary">ADJASSOHO</span>
+            <span className="text-primary">Silvère</span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -47,13 +48,14 @@ export default function Navbar() {
           </div>
 
           {/* Contact Button */}
-          <motion.button
+          <motion.a
+            href="#contact"
             className="hidden md:block px-6 py-2 bg-secondary text-white font-medium rounded-full hover:bg-secondary/90 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Me contacter
-          </motion.button>
+          </motion.a>
 
           {/* Mobile menu button */}
           <button 
@@ -84,9 +86,9 @@ export default function Navbar() {
                   {item.name}
                 </a>
               ))}
-              <button className="w-full py-2 bg-secondary text-white font-medium rounded-full mt-4">
+              <a href="#contact" className="w-full py-2 bg-secondary text-white font-medium rounded-full mt-4 text-center block">
                 Me contacter
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

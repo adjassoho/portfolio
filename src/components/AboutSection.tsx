@@ -38,13 +38,21 @@ export default function AboutSection() {
 
   return (
     <section className="py-20 relative overflow-hidden bg-background">
-      {/* Background decoration */}
+      {/* Background elements */}
       <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 enhanced-gradient"></div>
+        <div className="floating-particles"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/10 blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-secondary/10 blur-3xl animate-pulse"></div>
+      </div>
+
+      {/* Background decoration */}
+      <div className="absolute inset-0 z-10">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-r from-secondary/5 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Left column - Title and intro */}
           <motion.div
@@ -95,7 +103,7 @@ export default function AboutSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ x: 10 }}
-                  className="bg-card p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border"
+                  className="bg-card/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border shimmer"
                 >
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-xl bg-primary/20 text-primary flex-shrink-0">
@@ -129,7 +137,7 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-card p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border"
+                  className="bg-card/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-border"
                 >
                   <div className="flex justify-between mb-3">
                     <span className="font-medium">{skill.name}</span>
@@ -137,7 +145,7 @@ export default function AboutSection() {
                   </div>
                   <div className="h-3 bg-muted rounded-full overflow-hidden">
                     <motion.div 
-                      className="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
+                      className="h-full bg-primary rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       viewport={{ once: true }}

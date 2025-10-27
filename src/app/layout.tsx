@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ADJASSOHO Silvère | Portfolio",
   description: "Portfolio de ADJASSOHO Silvère, développeur fullstack spécialisé en Next.js, Flutter et intégration IA",
+  keywords: "développeur, fullstack, Next.js, Flutter, IA, Bénin, Calavi",
+  authors: [{ name: "ADJASSOHO Silvère" }],
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
 };
 
 export default function RootLayout({

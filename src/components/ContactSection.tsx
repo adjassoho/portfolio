@@ -29,28 +29,44 @@ export default function ContactSection() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Localisation",
-      content: "Calavi, Bénin"
+      content: "Calavi, Bénin",
+      link: null
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      content: "silveradjassoho@gmail.com"
+      content: "silveradjassoho@gmail.com",
+      link: "mailto:silveradjassoho@gmail.com"
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Téléphone",
-      content: "+229 XX XX XX XX"
+      content: "+229 01 65 90 00 07",
+      link: "tel:+22901659000007"
+    },
+    {
+      icon: <Phone className="w-6 h-6" />,
+      title: "WhatsApp",
+      content: "+229 55 61 69 60",
+      link: "https://wa.me/22955616960"
     }
   ];
 
   return (
     <section className="py-20 relative overflow-hidden bg-background">
-      {/* Background decoration */}
+      {/* Background elements */}
       <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 enhanced-gradient"></div>
+        <div className="floating-particles"></div>
+        <div className="absolute top-1/3 left-1/3 w-64 h-64 rounded-full bg-accent/10 blur-3xl animate-pulse"></div>
+      </div>
+
+      {/* Background decoration */}
+      <div className="absolute inset-0 z-10">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +92,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-card rounded-3xl shadow-xl p-8 h-full border border-border">
+            <div className="bg-card/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 h-full border border-border">
               <h3 className="text-2xl font-bold mb-8">
                 Restons en <span className="text-primary">contact</span>
               </h3>
@@ -101,7 +117,18 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg mb-1">{info.title}</h4>
-                      <p className="text-foreground/80">{info.content}</p>
+                      {info.link ? (
+                        <a 
+                          href={info.link}
+                          target={info.link.startsWith('http') ? '_blank' : undefined}
+                          rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="text-foreground/80 hover:text-primary transition-colors"
+                        >
+                          {info.content}
+                        </a>
+                      ) : (
+                        <p className="text-foreground/80">{info.content}</p>
+                      )}
                     </div>
                   </motion.div>
                 ))}
@@ -133,7 +160,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-card rounded-3xl shadow-xl p-8 border border-border">
+            <div className="bg-card/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-border">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -145,7 +172,7 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-muted border border-border rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 bg-muted/50 border border-border rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
                       placeholder="Votre nom"
                     />
                   </div>
@@ -159,7 +186,7 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-muted border border-border rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 bg-muted/50 border border-border rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
                       placeholder="votre@email.com"
                     />
                   </div>
@@ -174,7 +201,7 @@ export default function ContactSection() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-muted border border-border rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 bg-muted/50 border border-border rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
                     placeholder="Sujet de votre message"
                   />
                 </div>
@@ -188,7 +215,7 @@ export default function ContactSection() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 bg-muted border border-border rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 bg-muted/50 border border-border rounded-xl focus:ring-2 focus:ring-secondary focus:border-transparent transition-colors"
                     placeholder="Votre message..."
                   ></textarea>
                 </div>
