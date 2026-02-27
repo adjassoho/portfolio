@@ -134,11 +134,11 @@ body {
 }
 
 .animate-float {
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 .animate-pulse-custom {
-  animation: pulse 3s ease-in-out infinite;
+  animation: pulse 4s ease-in-out infinite;
 }
 
 /* Custom utilities */
@@ -171,16 +171,6 @@ body {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.05);
   }
-}/* Per
-formance optimizations */
-.animate-float {
-  animation: float 8s ease-in-out infinite;
-  will-change: transform;
-}
-
-.animate-pulse-custom {
-  animation: pulse 4s ease-in-out infinite;
-  will-change: opacity;
 }
 
 /* Reduce motion for users who prefer it */

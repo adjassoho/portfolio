@@ -187,6 +187,7 @@ export default function Galaxy({
   rotationSpeed = 0.1,
   autoCenterRepulsion = 0,
   transparent = true,
+  paused = false,
   ...rest
 }) {
   const ctnDom = useRef(null);
@@ -215,8 +216,10 @@ export default function Galaxy({
     let program;
 
     function resize() {
-      const scale = 1;
+      const scale = 0.5;
       renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
+      gl.canvas.style.width = '100%';
+      gl.canvas.style.height = '100%';
       if (program) {
         program.uniforms.uResolution.value = new Color(
           gl.canvas.width,
@@ -260,8 +263,13 @@ export default function Galaxy({
 
     const mesh = new Mesh(gl, { geometry, program });
     let animateId;
+    let isPaused = paused;
 
     function update(t) {
+      if (isPaused) {
+        animateId = null;
+        return;
+      }
       animateId = requestAnimationFrame(update);
       if (!disableAnimation) {
         program.uniforms.uTime.value = t * 0.001;
@@ -280,7 +288,23 @@ export default function Galaxy({
 
       renderer.render({ scene: mesh });
     }
-    animateId = requestAnimationFrame(update);
+    if (!isPaused) {
+      animateId = requestAnimationFrame(update);
+    }
+
+    // Expose pause/resume control via ref-like pattern
+    const pauseController = {
+      setPaused: (val) => {
+        isPaused = val;
+        if (!val && !animateId) {
+          animateId = requestAnimationFrame(update);
+        } else if (val && animateId) {
+          cancelAnimationFrame(animateId);
+          animateId = null;
+        }
+      }
+    };
+    ctn.__galaxyPauseController = pauseController;
     ctn.appendChild(gl.canvas);
 
     function handleMouseMove(e) {
@@ -326,8 +350,17 @@ export default function Galaxy({
     rotationSpeed,
     repulsionStrength,
     autoCenterRepulsion,
-    transparent
+    transparent,
+    paused
   ]);
+
+  // React to paused prop changes
+  useEffect(() => {
+    const ctn = ctnDom.current;
+    if (ctn && ctn.__galaxyPauseController) {
+      ctn.__galaxyPauseController.setPaused(paused);
+    }
+  }, [paused]);
 
   return <div ref={ctnDom} className="galaxy-container" {...rest} />;
 }

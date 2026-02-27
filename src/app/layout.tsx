@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -12,12 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "ADJASSOHO Silvère | Portfolio",
   description: "Portfolio de ADJASSOHO Silvère, développeur fullstack spécialisé en Next.js, Flutter et intégration IA",
   keywords: "développeur, fullstack, Next.js, Flutter, IA, Bénin, Calavi",
   authors: [{ name: "ADJASSOHO Silvère" }],
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
 };
 

@@ -1,15 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import ProfileCard from "./ProfileCard";
-import Galaxy from "./Galaxy";
+
+const Galaxy = dynamic(() => import("./Galaxy"), { ssr: false });
 
 export default function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsPaused(!entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background">
+    <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-background">
       {/* Galaxy background */}
       <div className="absolute inset-0 z-0">
-        <Galaxy />
+        <Galaxy paused={isPaused} />
       </div>
 
       <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">

@@ -158,6 +158,45 @@ export default function ProjectsSection() {
       },
       featured: false,
       isCollaborative: true
+    },
+    {
+      id: 9,
+      title: "ESO Rouen",
+      description: "Site web institutionnel informatif et élégant pour ESO Rouen.",
+      image: "/eso_rouen.png",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+      links: {
+        live: "https://eso-rouen.vercel.app",
+        github: "#"
+      },
+      featured: true,
+      isCollaborative: false
+    },
+    {
+      id: 10,
+      title: "Le Mojo Rouen",
+      description: "Site web moderne de présentation pour le restaurant Le Mojo Rouen.",
+      image: "/le_mojo_rouen.png",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+      links: {
+        live: "https://le-mojo-rouen.vercel.app",
+        github: "#"
+      },
+      featured: true,
+      isCollaborative: false
+    },
+    {
+      id: 11,
+      title: "Tranché Rouen",
+      description: "Site web pour la boulangerie artisanale Tranché à Rouen.",
+      image: "/tranche_rouen.png",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+      links: {
+        live: "https://tranche-rouen-restau.vercel.app",
+        github: "#"
+      },
+      featured: true,
+      isCollaborative: false
     }
   ];
 

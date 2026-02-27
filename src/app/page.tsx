@@ -1,15 +1,28 @@
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import CertificationsSection from "@/components/CertificationsSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import ContactSection from "@/components/ContactSection";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { Suspense } from "react";
+
+const AboutSection = dynamic(() => import("@/components/AboutSection"), {
+  loading: () => <div className="h-screen bg-background" />,
+});
+const CertificationsSection = dynamic(() => import("@/components/CertificationsSection"), {
+  loading: () => <div className="h-screen bg-background" />,
+});
+const ProjectsSection = dynamic(() => import("@/components/ProjectsSection"), {
+  loading: () => <div className="h-screen bg-background" />,
+});
+const TestimonialsSection = dynamic(() => import("@/components/TestimonialsSection"), {
+  loading: () => <div className="h-screen bg-background" />,
+});
+const ContactSection = dynamic(() => import("@/components/ContactSection"), {
+  loading: () => <div className="h-screen bg-background" />,
+});
+const Footer = dynamic(() => import("@/components/Footer"), {
+  loading: () => <div className="h-32 bg-background" />,
+});
 
 export default function Home() {
   return (
@@ -18,41 +31,31 @@ export default function Home() {
       <ScrollIndicator />
       <FloatingWhatsApp />
       <Navbar />
-      
+
       <div id="home">
         <HeroSection />
       </div>
-      
-      <Suspense fallback={<div className="h-screen bg-background" />}>
-        <div id="about">
-          <AboutSection />
-        </div>
-      </Suspense>
-      
-      <Suspense fallback={<div className="h-screen bg-background" />}>
-        <div id="certifications">
-          <CertificationsSection />
-        </div>
-      </Suspense>
-      
-      <Suspense fallback={<div className="h-screen bg-background" />}>
-        <div id="projects">
-          <ProjectsSection />
-        </div>
-      </Suspense>
-      
-      <Suspense fallback={<div className="h-screen bg-background" />}>
-        <div id="testimonials">
-          <TestimonialsSection />
-        </div>
-      </Suspense>
-      
-      <Suspense fallback={<div className="h-screen bg-background" />}>
-        <div id="contact">
-          <ContactSection />
-        </div>
-      </Suspense>
-      
+
+      <div id="about">
+        <AboutSection />
+      </div>
+
+      <div id="certifications">
+        <CertificationsSection />
+      </div>
+
+      <div id="projects">
+        <ProjectsSection />
+      </div>
+
+      <div id="testimonials">
+        <TestimonialsSection />
+      </div>
+
+      <div id="contact">
+        <ContactSection />
+      </div>
+
       <Footer />
     </main>
   );
