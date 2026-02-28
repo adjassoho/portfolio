@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
           >
             <span className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary/20 to-accent/20 text-primary rounded-full text-sm font-medium mb-6 border border-primary/30">
               <Sparkles className="w-4 h-4" />
-              Ce qu'ils disent de moi
+              Ce qu&apos;ils disent de moi
             </span>
           </motion.div>
 
@@ -185,7 +185,7 @@ export default function TestimonialsSection() {
 
                   {/* Testimonial text */}
                   <p className="text-foreground/90 text-lg leading-relaxed mb-6 italic">
-                    "{testimonial.content}"
+                    &quot;{testimonial.content}&quot;
                   </p>
 
                   {/* Author info */}

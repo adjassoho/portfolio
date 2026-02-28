@@ -69,7 +69,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              Je crée des expériences numériques élégantes en associant l'intelligence artificielle
+              Je crée des expériences numériques élégantes en associant l&apos;intelligence artificielle
               à des solutions techniques performantes. Basé à Calavi, Bénin.
             </motion.p>
 
@@ -82,7 +82,7 @@ export default function HeroSection() {
             >
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary">3+</div>
-                <div className="text-foreground/60">Années d'expérience</div>
+                <div className="text-foreground/60">Années d&apos;expérience</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-secondary">20+</div>

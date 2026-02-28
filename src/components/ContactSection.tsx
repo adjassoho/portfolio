@@ -96,12 +96,12 @@ export default function ContactSection() {
               <h3 className="text-2xl font-bold mb-8">
                 Restons en <span className="text-primary">contact</span>
               </h3>
-              
+
               <p className="text-lg text-foreground/80 mb-10 leading-relaxed">
-                Intéressé par mon travail ? Vous avez un projet en tête ? N'hésitez pas à me contacter, 
+                Intéressé par mon travail ? Vous avez un projet en tête ? N&apos;hésitez pas à me contacter,
                 je suis toujours ouvert aux nouvelles opportunités et collaborations.
               </p>
-              
+
               <div className="space-y-8 mb-12">
                 {contactInfo.map((info, index) => (
                   <motion.div
@@ -118,7 +118,7 @@ export default function ContactSection() {
                     <div>
                       <h4 className="font-semibold text-lg mb-1">{info.title}</h4>
                       {info.link ? (
-                        <a 
+                        <a
                           href={info.link}
                           target={info.link.startsWith('http') ? '_blank' : undefined}
                           rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -133,12 +133,12 @@ export default function ContactSection() {
                   </motion.div>
                 ))}
               </div>
-              
+
               <div>
                 <h4 className="font-semibold text-lg mb-6">Suivez-moi</h4>
                 <div className="flex space-x-4">
-                  <a href="https://github.com/adjassoho" target="_blank" rel="noopener noreferrer" 
-                     className="p-3 rounded-full bg-muted hover:bg-secondary hover:text-white transition-all duration-300 group">
+                  <a href="https://github.com/adjassoho" target="_blank" rel="noopener noreferrer"
+                    className="p-3 rounded-full bg-muted hover:bg-secondary hover:text-white transition-all duration-300 group">
                     <Github className="w-6 h-6 text-foreground group-hover:text-white transition-colors" />
                   </a>
                   <a href="#" className="p-3 rounded-full bg-muted hover:bg-secondary hover:text-white transition-all duration-300 group">
@@ -176,7 +176,7 @@ export default function ContactSection() {
                       placeholder="Votre nom"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
                     <input
@@ -191,7 +191,7 @@ export default function ContactSection() {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium mb-2">Sujet</label>
                   <input
@@ -205,7 +205,7 @@ export default function ContactSection() {
                     placeholder="Sujet de votre message"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
                   <textarea
@@ -219,7 +219,7 @@ export default function ContactSection() {
                     placeholder="Votre message..."
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full py-4 bg-secondary text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"

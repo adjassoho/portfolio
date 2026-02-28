@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Download, Award, Calendar, FileText, ExternalLink, Sparkles } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function CertificationsSection() {
@@ -137,12 +136,11 @@ export default function CertificationsSection() {
               onHoverEnd={() => setHoveredId(null)}
               className="group relative"
             >
-              <div className={`relative h-full bg-card/80 backdrop-blur-sm rounded-3xl overflow-hidden border border-primary/20 transition-all duration-500 ${
-                hoveredId === cert.id ? 'shadow-2xl shadow-primary/30 scale-105 border-primary/50' : 'shadow-lg'
-              }`}>
+              <div className={`relative h-full bg-card/80 backdrop-blur-sm rounded-3xl overflow-hidden border border-primary/20 transition-all duration-500 ${hoveredId === cert.id ? 'shadow-2xl shadow-primary/30 scale-105 border-primary/50' : 'shadow-lg'
+                }`}>
                 {/* Animated gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
+
                 {/* Certificate preview */}
                 <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -153,7 +151,7 @@ export default function CertificationsSection() {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Shine effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </div>
@@ -170,11 +168,11 @@ export default function CertificationsSection() {
                   <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
                     {cert.title}
                   </h3>
-                  
+
                   <p className="text-sm text-foreground/70 font-medium mb-3">
                     {cert.issuer}
                   </p>
-                  
+
                   <p className="text-sm text-foreground/80 mb-4 line-clamp-2">
                     {cert.description}
                   </p>
@@ -209,7 +207,7 @@ export default function CertificationsSection() {
           <div className="relative bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/10 backdrop-blur-sm rounded-3xl overflow-hidden border border-primary/30 shadow-2xl">
             {/* Animated background */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-secondary/5 animate-pulse"></div>
-            
+
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-accent/20 to-transparent rounded-full blur-3xl"></div>
@@ -222,16 +220,16 @@ export default function CertificationsSection() {
                     <FileText className="w-4 h-4" />
                     Curriculum Vitae
                   </div>
-                  
+
                   <h3 className="text-3xl md:text-4xl font-bold mb-4">
                     Téléchargez mon <span className="text-primary">CV complet</span>
                   </h3>
-                  
+
                   <p className="text-foreground/80 mb-6 leading-relaxed">
-                    Découvrez l'ensemble de mon parcours professionnel, mes compétences techniques 
+                    Découvrez l&apos;ensemble de mon parcours professionnel, mes compétences techniques
                     et mes réalisations dans le développement web et mobile.
                   </p>
-                  
+
                   <div className="grid grid-cols-2 gap-4 mb-8">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
@@ -248,7 +246,7 @@ export default function CertificationsSection() {
                       </div>
                       <div>
                         <div className="text-2xl font-bold text-accent">3+</div>
-                        <div className="text-sm text-foreground/70">Années d'exp.</div>
+                        <div className="text-sm text-foreground/70">Années d&apos;exp.</div>
                       </div>
                     </div>
                   </div>
@@ -268,12 +266,12 @@ export default function CertificationsSection() {
                     >
                       {/* Animated shine effect */}
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                      
+
                       <Download className="w-6 h-6 relative z-10 group-hover:animate-bounce" />
                       <span className="relative z-10 text-lg">Télécharger mon CV</span>
                     </a>
                   </motion.div>
-                  
+
                   <div className="mt-4 flex items-center gap-4 text-sm text-foreground/60">
                     <span className="flex items-center gap-1">
                       <FileText className="w-4 h-4" />

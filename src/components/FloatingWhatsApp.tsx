@@ -13,7 +13,7 @@ export default function FloatingWhatsApp() {
     const timer = setTimeout(() => {
       setIsVisible(true);
       setShowTooltip(true);
-      
+
       // Hide tooltip after 5 seconds
       setTimeout(() => setShowTooltip(false), 5000);
     }, 3000);
@@ -54,7 +54,7 @@ export default function FloatingWhatsApp() {
                 >
                   <X className="w-3 h-3" />
                 </button>
-                <p className="text-sm font-medium mb-2">💬 Besoin d'aide ?</p>
+                <p className="text-sm font-medium mb-2">💬 Besoin d&apos;aide ?</p>
                 <p className="text-xs text-foreground/70">
                   Discutons de votre projet sur WhatsApp !
                 </p>
@@ -73,7 +73,7 @@ export default function FloatingWhatsApp() {
         >
           {/* Pulsing ring */}
           <div className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></div>
-          
+
           {/* Button */}
           <div className="relative w-16 h-16 bg-[#25D366] rounded-full shadow-2xl flex items-center justify-center hover:shadow-[#25D366]/50 transition-all duration-300">
             <MessageCircle className="w-8 h-8 text-white" />

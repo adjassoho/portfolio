@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-secondary/5"></div>
         <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-secondary/3 to-transparent"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* About */}
@@ -20,12 +20,12 @@ export default function Footer() {
               <span className="text-secondary"> Silvère</span>
             </div>
             <p className="text-foreground/70 mb-6 max-w-lg leading-relaxed">
-              Développeur fullstack passionné par l'innovation technologique et l'intégration de l'intelligence artificielle 
+              Développeur fullstack passionné par l&apos;innovation technologique et l&apos;intégration de l&apos;intelligence artificielle
               dans des solutions numériques élégantes et performantes.
             </p>
             <div className="flex space-x-4">
-              <a href="https://github.com/adjassoho" target="_blank" rel="noopener noreferrer" 
-                 className="p-3 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors">
+              <a href="https://github.com/adjassoho" target="_blank" rel="noopener noreferrer"
+                className="p-3 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors">
                 <Github className="w-5 h-5" />
               </a>
               <a href="#" className="p-3 rounded-full bg-muted hover:bg-primary hover:text-white transition-colors">

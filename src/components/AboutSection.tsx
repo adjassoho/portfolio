@@ -71,13 +71,13 @@ export default function AboutSection() {
               </h2>
               <div className="w-20 h-1 bg-secondary"></div>
             </div>
-            
+
             <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-              Avec 3 ans d'expérience en développement fullstack, je combine expertise technique 
-              et créativité pour créer des solutions numériques innovantes. Mon approche unique 
-              intègre l'intelligence artificielle pour des résultats plus professionnels et efficaces.
+              Avec 3 ans d&apos;expérience en développement fullstack, je combine expertise technique
+              et créativité pour créer des solutions numériques innovantes. Mon approche unique
+              intègre l&apos;intelligence artificielle pour des résultats plus professionnels et efficaces.
             </p>
-            
+
             <div className="flex items-center gap-4 mb-8">
               <BadgeCheck className="w-8 h-8 text-secondary" />
               <span className="text-xl font-semibold">Certifié en Vibe Coding & Gestion de Projet</span>
@@ -93,7 +93,7 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-2xl font-bold mb-8">Mon approche</h3>
-            
+
             <div className="space-y-6">
               {expertise.map((item, index) => (
                 <motion.div
@@ -128,7 +128,7 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-2xl font-bold mb-8">Mes compétences</h3>
-            
+
             <div className="space-y-6">
               {skills.map((skill, index) => (
                 <motion.div
@@ -144,7 +144,7 @@ export default function AboutSection() {
                     <span className="text-primary">{skill.level}%</span>
                   </div>
                   <div className="h-3 bg-muted rounded-full overflow-hidden">
-                    <motion.div 
+                    <motion.div
                       className="h-full bg-primary rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
